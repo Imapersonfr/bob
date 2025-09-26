@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple HTML Game</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+        canvas {
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+        #game-info {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Awesome Game</h1>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="game-info">
+        Score: <span id="score">0</span>
+    </div>
+
+    <script>
+        // JavaScript code for game logic will go here
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreDisplay = document.getElementById('score');
+        let score = 0;
+
+        // Example: Draw a simple rectangle
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(50, 50, 100, 75);
+
+        // Example: Update score
+        function updateScore() {
+            score++;
+            scoreDisplay.textContent = score;
+        }
+
+        // You would add more complex game logic,
+        // event listeners for user input, animation loops, etc. here.
+        // For instance, a click event on the canvas to trigger something:
+        canvas.addEventListener('click', updateScore);
+
+    </script>
+</body>
+</html>
